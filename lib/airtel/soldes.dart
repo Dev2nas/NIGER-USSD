@@ -1,0 +1,110 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_boxicons/flutter_boxicons.dart';
+import 'package:niger_ussd/airtel/appel/ForfaitAppel.dart';
+import 'package:niger_ussd/airtel/Internet/ForfaitInternet.dart';
+import 'drawer.dart';
+
+class soldes extends StatelessWidget {
+  const soldes({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+          backgroundColor: HexColor('#ff0000'),
+          title: Text("Soldes",
+              style: GoogleFonts.lato(
+                fontSize: 20,
+                fontWeight: FontWeight.w800,
+              ))),
+      backgroundColor: Colors.white,
+      body: GridView.count(
+        shrinkWrap: true,
+        primary: true,
+        crossAxisCount: 2,
+        padding: const EdgeInsets.all(20),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 2,
+        children: <Widget>[
+          Text("v1.0"),
+          //appel
+          Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: Center(
+              child: Card(
+                child: ElevatedButton(
+                  onPressed: () {
+                    _creditInit();
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Icon(FontAwesomeIcons.phone, size: 80),
+                      Center(
+                        child: Text(
+                          "Mon crédit initial",
+                          style: GoogleFonts.lato(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      elevation: 5, backgroundColor: HexColor('#ff0000')),
+                ),
+              ),
+            ),
+          ),
+          //internet
+          Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: Center(
+              child: Card(
+                child: ElevatedButton(
+                  onPressed: () {
+                    _minInternet();
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      Icon(FontAwesomeIcons.globe, size: 80),
+                      Center(
+                        child: Text(
+                          "Min+Internet",
+                          style: GoogleFonts.lato(
+                            fontSize: 18,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                  style: ElevatedButton.styleFrom(
+                      elevation: 5, backgroundColor: HexColor('#ff0000')),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+_creditInit() async {
+  const number = '*137#'; //set the number here
+  bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+}
+
+_minInternet() async {
+  const number = '*121#'; //set the number here
+  bool? res = await FlutterPhoneDirectCaller.callNumber(number);
+}
