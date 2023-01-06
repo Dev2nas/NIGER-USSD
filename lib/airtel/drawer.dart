@@ -91,10 +91,17 @@ class _drawerState extends State<drawer> {
               ),
             ),
             onTap: () {
-              Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => index_airtel())); //Quiz
+              Navigator.of(context).pop();
+              final snackBar = SnackBar(
+              content:Text(
+                  'Bientôt',
+                  style: GoogleFonts.lato(color: HexColor('#ff0000'),
+                    fontSize: 30,
+                    fontWeight: FontWeight.w300,
+                  ),
+                ),duration: Duration(seconds: 1),
+            );
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
             },
           ),
           ListTile(

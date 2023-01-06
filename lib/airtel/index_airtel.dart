@@ -12,7 +12,7 @@ import 'drawer.dart';
 
 class index_airtel extends StatelessWidget {
   const index_airtel({Key? key}) : super(key: key);
-
+  //const SnackBarDemo({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -155,6 +155,18 @@ class index_airtel extends StatelessWidget {
               child: Card(
                 child: ElevatedButton(
                   onPressed: () {
+                    final snackBar = SnackBar(
+                      content:  Center(
+                        child: Text(
+                          'Bientôt',
+                          style: GoogleFonts.lato(color: HexColor('#ff0000'),
+                            fontSize: 30,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),duration: Duration(seconds: 1),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
                   },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -281,7 +293,20 @@ class index_airtel extends StatelessWidget {
             child: Center(
               child: Card(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    final snackBar = SnackBar(
+                      content:  Center(
+                        child: Text(
+                          'Bientôt',
+                          style: GoogleFonts.lato(color: HexColor('#ff0000'),
+                            fontSize: 30,
+                            fontWeight: FontWeight.w300,
+                          ),
+                        ),
+                      ),duration: Duration(seconds: 1),
+                    );
+                    ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  },
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
