@@ -30,7 +30,6 @@ class soldes extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 2,
         children: <Widget>[
-          Text("v1.0"),
           //appel
           Padding(
             padding: const EdgeInsets.all(0.0),
