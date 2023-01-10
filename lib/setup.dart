@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'airtel/index_airtel.dart';
+import 'moov/index_moov.dart';
+import 'zamani/index_zamani.dart';
+import 'nigertelecom/index_nigertelecom.dart';
 class setup extends StatelessWidget {
   const setup({Key? key}) : super(key: key);
 
@@ -38,7 +41,11 @@ class setup extends StatelessWidget {
                     child: Center(
                       child: Card(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => index_nigertelecom()));
+                          },
                           child: Image.asset(
                             'images/nigertelecom.png',
                             width: 400,
@@ -56,7 +63,11 @@ class setup extends StatelessWidget {
                     child: Center(
                       child: Card(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => index_zamani()));
+                          },
                           child: Image.asset(
                             'images/zamani.png',
                             width: 400,
@@ -74,7 +85,11 @@ class setup extends StatelessWidget {
                     child: Center(
                       child: Card(
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => index_moov()));
+                          },
                           child: Image.asset(
                             'images/moov.png',
                             width: 400,

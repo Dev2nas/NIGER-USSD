@@ -3,14 +3,10 @@ import 'package:flutter_boxicons/flutter_boxicons.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'package:niger_ussd/version.dart';
-import 'package:flutter/src/material/drawer.dart';
-import '../apropos.dart';
-import '../contacts.dart';
-//import '../share.dart';
-import 'drawer.dart';
-import 'index_airtel.dart';
+import 'version.dart';
+import 'apropos.dart';
+import 'contacts.dart';
+import '../setup.dart';
 
 class drawer extends StatefulWidget {
   @override
@@ -32,10 +28,27 @@ class _drawerState extends State<drawer> {
                 "images/airtel.png",
                 color: HexColor('#ff0000'),
               )),
+          //changer d'operateur
+          ListTile(
+            leading: Icon(FontAwesomeIcons.simCard),
+            title: Text(
+              "Changer d'operateur",
+              style: GoogleFonts.lato(
+                fontSize: 30,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => setup())); //Quiz
+            },
+          ),
           ListTile(
             leading: Icon(FontAwesomeIcons.phone),
             title: Text(
-              'Nous contacter',
+              'Contacts',
               style: GoogleFonts.lato(
                 fontSize: 30,
                 fontWeight: FontWeight.w800,

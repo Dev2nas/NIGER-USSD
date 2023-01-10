@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'dart:ui';
 import 'dart:async';
 
 import 'package:niger_ussd/setup.dart';
@@ -37,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
+    super.initState();
     startTime();
   }
 
@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: HexColor("#e95828"),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,

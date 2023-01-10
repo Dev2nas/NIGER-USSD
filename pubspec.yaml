@@ -1,5 +1,5 @@
 name: niger_ussd
-description: A new Flutter application.
+description: Vous permet de voir tous les codes USSD disponible au niger.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -51,7 +51,6 @@ dependencies:
   flutter_phone_direct_caller: ^2.1.1
   flutter_sms_inbox: ^1.0.2
   telephony: ^0.2.0
-  sms: ^0.2.4
   animated_text_kit: ^4.2.2
   url_launcher: ^6.1.7
 
@@ -59,16 +58,20 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 flutter_icons:
+  #android: "launcher_icon"
   android: "launcher_icon"
   ios: true
   background_color: "#fffff"
+  icon_size: 48
+  generate: true
   image_path: "images/logo-orange.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
   web:
     generate: true
     image_path: "images/logo-orange.png"
-    background_color: "#hexcode"
-    theme_color: "#hexcode"
+    icon_size: 48
+    background_color: "#fffff"
+    theme_color: "#fffff"
   windows:
     generate: true
     image_path: "images/logo-orange.png"

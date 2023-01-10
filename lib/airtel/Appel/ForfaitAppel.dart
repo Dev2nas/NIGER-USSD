@@ -1,13 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:niger_ussd/airtel/appel/tabBar/hebdomadaire.dart';
 import 'package:niger_ussd/airtel/Appel/tabBar/nuit.dart';
 import 'tabBar/journalier.dart';
 import 'tabBar/mensuel.dart';
-import 'package:flutter_boxicons/flutter_boxicons.dart';
-import 'package:niger_ussd/airtel/Appel/ForfaitAppel.dart';
 
 class forfaitAppel extends StatelessWidget {
   const forfaitAppel({Key? key}) : super(key: key);
@@ -23,12 +20,14 @@ class forfaitAppel extends StatelessWidget {
                 fontWeight: FontWeight.w800,
               ))),
       backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       body: DefaultTabController(
           length: 4, // length of tabs
           initialIndex: 0,
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
+                Flexible(child:
                 Container(
                   constraints: BoxConstraints.expand(height: 50),
                   color: Colors.white,
@@ -57,13 +56,13 @@ class forfaitAppel extends StatelessWidget {
                       ),)),
                     ],
                   ),
-                ),
+                ),flex: 1,),
                 SingleChildScrollView(
                   scrollDirection: Axis.vertical,
                   child: Column(
                     children: [
                       Container(
-                          height: 537,
+                          height: 600,
                           child: TabBarView(children: <Widget>[
                             Container(
                               child: journalier(),
